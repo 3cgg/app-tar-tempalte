@@ -1,0 +1,45 @@
+cpp:
+  name: ${spring.application.name}
+  security:
+    key: _you_@never@_known@aha_3cgg@163.com_
+  jwt:
+    secret: jiazhongjin
+    expiration: 3600000000 #milliseconds  ; long long time , only for developing
+    header: _token
+  ehcache:
+    name: dev
+  redis:
+    expired-time: 3600  #seconds
+  thread:
+    name: 'common-task-pool'
+    alive-count: 3
+    max-count: 9
+    alive-time: 3600 # seconds
+  es5x6:
+    addresses: {"[192.168.93.128]": 9200}
+    headers: {"es-request-indicator": J}
+    userName: elastic
+    password: changeme
+    timeout: 90 # seconds
+  file:
+    endpoint: true
+    upload:
+      dsk-path: c:/file-store/   #simple file directory
+      host: http://localhost:8888/ #IP地址 指定文件存储的地址
+    temp:
+      temp-dsk-path: c:/temp-file-store/   #simple file directory
+      temp-host: http://localhost:9898/ #IP地址 指定文件存储的地址
+  loader:
+    refresh:
+      endpoint: true
+  mock:
+    endpoint: true
+    header-key: _mock_enable
+  cors:
+    items:
+      - /**;*;*;* #[path,];[method,];[header,];[origin,]
+  swagger:
+    mock-header: ${cpp.mock.header-key}
+
+
+

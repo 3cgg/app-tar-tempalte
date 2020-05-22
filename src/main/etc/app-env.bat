@@ -32,7 +32,7 @@ set APP_OPTS=-XX:+UseConcMarkSweepGC -Dfile.encoding=utf-8
 :: set APP_OPTS=%APP_OPTS% -XX:PermSize=128m -XX:MaxPermSize=128m -XX:ReservedCodeCacheSize=256m
 
 :: Enable remote JDWP debugging of major HBase processes. Meant for Core Developers 
-:: export APP_OPTS="APP_OPTS -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8070"
+:: export APP_OPTS="%APP_OPTS% -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8070"
 
 :: The directory where pid files are stored. /tmp by default.
 :: export APP_PID_DIR=/var/hadoop/pids
